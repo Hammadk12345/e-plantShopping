@@ -2,9 +2,9 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity } from './CartSlice';
 import './CartItem.css';
-import ProductList from './ProductList';
+// import ProductList from './ProductList';
 
-const CartItem = () => {
+const CartItem = ({ onContinueShopping }) => {
   const cart = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
   // Calculate total amount for all products in the cart
@@ -14,6 +14,7 @@ const CartItem = () => {
 
   const handleContinueShopping = (e) => {
     e.preventDefault();
+    onContinueShopping();
     
   };
 

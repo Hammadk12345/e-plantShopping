@@ -303,7 +303,7 @@ function ProductList() {
 
                 </div>
             ) : (
-                <CartItem onContinueShopping={handleContinueShopping} />
+                <CartItem onContinueShopping={() => setShowCart(false)} />
             )}
         </div>
     );
